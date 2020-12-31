@@ -10,9 +10,6 @@ for (i=0; i<array.length; i++) {
   result += array[i];
 }
 console.log("output", result);
-//test
-//test1
-//test2
 
 //------------------------------------------------------------------------------------
 
