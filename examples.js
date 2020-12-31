@@ -179,3 +179,23 @@ inputss.map((vals, key) => {
 
 //console.log(QArray);
 
+//--------------------------------------------------------------------------------
+
+// 7. Write a function that takes in two numbers and return its sum. Now call this `add` function many times. But the function should only execute once every 1 minute. The rest of the calls should be ignored.
+
+
+// var idVar = setInterval(() => {
+//   timer()
+// }, 20000);
+//
+// function timer() {
+//   var dateVar = new Date();
+//   var time = dateVar.toLocaleTimeString();
+//   console.log(time);
+// };
+
+function sayHi() {
+  console.log('Hello');
+}
+
+setTimeout(sayHi, 1000);
