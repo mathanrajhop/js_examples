@@ -125,74 +125,38 @@ console.log("output", [1, 2, 3, 4, 5].nextMultiply());
 //   eg: First time i call `add(1,2)` calculates `1 + 2` and returns 3.
 //       On calling again with same inputs `add(1,2)`, it should return 3 from memory instead of calculation.
 
-// console.log("7. Write a function that takes in two numbers and return its sum. Modify this function to remember the input and output. So the next time, i send in the same inputs, the result should be returned from the memory instead of calculation.");
-// let QArray = [];
-// function add(a, b)
-// {
-//   return a+b;
-// }
-//
-// let inputss = [
-//     {
-//       ins1 : 1,
-//       ins2 : 2,
-//     },
-//     {
-//       ins1 : 2,
-//       ins2 : 3,
-//     },
-//     {
-//       ins1 : 1,
-//       ins2 : 2,
-//     },
-//     {
-//       ins1 : 3,
-//       ins2 : 3,
-//     },
-//     {
-//       ins1 : 3,
-//       ins2 : 3,
-//     },
-//     {
-//       ins1 : 1,
-//       ins2 : 2,
-//     },
-//     {
-//       ins1 : 1,
-//       ins2 : 2,
-//     },
-//   ];
-//
-// Array.prototype.getIndexOf = function(el) {
-//   var arr = this;
-//   for (var i=0; i<arr.length; i++){
-//      //console.log(arr[i].input);
-//      if(arr[i].input==el){
-//        return i;
-//      }
-//   }
-//   return -1;
-// }
+console.log("7. Write a function that takes in two numbers and return its sum. Modify this function to remember the input and output. So the next time, i send in the same inputs, the result should be returned from the memory instead of calculation.");
+let QArray = {};
+function add(a, b)
+{
+  return a+b;
+}
 
-// inputss.map((vals, key) => {
-//   //console.log(vals.ins);
-//   let check = QArray.getIndexOf(vals.ins1+', '+vals.ins2);
-//   if(check <= -1)
-//   {
-//     let adds = add(vals.ins1, vals.ins2);
-//     QArray.push({
-//       "input": vals.ins1+', '+vals.ins2,
-//       "output": adds
-//     });
-//     console.log('output', adds);
-//   }
-//   else
-//   {
-//     console.log('output', QArray[check].output);
-//   }
-// });
+let inputs = [
+    { ins1 : 1, ins2 : 2, },
+    { ins1 : 2, ins2 : 3, },
+    { ins1 : 1, ins2 : 2, },
+    { ins1 : 3, ins2 : 3, },
+    { ins1 : 3, ins2 : 3, },
+    { ins1 : 1, ins2 : 2, },
+    { ins1 : 1, ins2 : 2, },
+  ];
 
-//console.log(QArray);
+inputs.map((vals, key) => {
+  //console.log(vals.ins);
+
+  if(QArray[vals.ins1+''+vals.ins2] !== undefined)
+  {
+     console.log('output', QArray[vals.ins1+''+vals.ins2]);
+  }
+  else
+  {
+    let adds = add(vals.ins1, vals.ins2);
+    QArray[vals.ins1+''+vals.ins2] = adds;
+    console.log('output', QArray[vals.ins1+''+vals.ins2]);
+  }
+});
+
 
 //--------------------------------------------------------------------------------
 
